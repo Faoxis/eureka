@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: my-eureka-client
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/,http://${eureka.peer.host:localhost}:${eureka.peer.port:8762}/eureka/
+    instance:
+        ip-address: ${HOST:localhost}
+        non-secure-port: ${server.port}
+        prefer-ip-address: true
+server:
+  port: 8012
